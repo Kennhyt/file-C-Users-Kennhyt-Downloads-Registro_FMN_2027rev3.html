@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FMN - Registro de Visitantes Diarios 2027</title>
+    <title>REGISTRO DE VISITANTES DIARIOS 2027</title>
     <!-- FontAwesome para iconos modernos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -12,392 +12,491 @@
         :root {
             --primary: #9b111e;
             --primary-gradient: linear-gradient(135deg, #9b111e 0%, #630a12 100%);
-            --secondary: #1a365d; /* Azul Oscuro Institucional */
+            --secondary: #1a365d; 
             --secondary-gradient: linear-gradient(135deg, #1a365d 0%, #0f223d 100%);
             --accent: #d97706;
-            --bg-body: #f1f5f9;
+            --bg-color: #f8fafc;
             --card-bg: #ffffff;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --radius-lg: 16px;
-            --radius-md: 10px;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
-            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            --border-color: #cbd5e1;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
         }
 
-        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); margin: 0; padding: 30px 15px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
 
         .container {
-            max-width: 1050px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             overflow: hidden;
-            border: 1px solid var(--border-color);
+            border-top: 6px solid var(--primary);
         }
 
-        /* HEADER INSTITUCIONAL OFICIAL */
-        .header-banner {
-            background: #ffffff;
-            padding: 20px 35px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--primary);
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .header-banner img { max-height: 55px; object-fit: contain; }
-
-        .title-box {
-            background: var(--secondary-gradient);
-            color: #ffffff;
-            padding: 25px 20px;
-            text-align: center;
-        }
-
-        .title-box h1 {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .title-box p { margin: 6px 0 0 0; font-size: 0.95rem; opacity: 0.95; font-weight: 500; }
-
-        form { padding: 35px; }
-
-        .module {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .module-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-        }
-
-        .module-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary-gradient);
-            color: #ffffff;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .module-title {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            font-size: 1.25rem;
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-
-        .form-group { display: flex; flex-direction: column; margin-bottom: 12px; }
-
-        label {
-            font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.88rem;
-            color: var(--secondary);
-        }
-
-        input[type="text"], input[type="number"], input[type="date"], select {
-            padding: 12px 14px;
-            border: 1.5px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            background-color: #f8fafc;
-        }
-
-        input:focus, select:focus {
-            border-color: var(--secondary);
-            background-color: #ffffff;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.15);
-        }
-
-        .table-responsive { overflow-x: auto; margin-top: 15px; border-radius: 10px; border: 1px solid var(--border-color); }
-        table { width: 100%; border-collapse: collapse; background: #ffffff; }
-        th {
-            background: var(--secondary-gradient);
-            color: #ffffff;
-            padding: 14px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            text-align: center;
-        }
-        td { padding: 12px; border-bottom: 1px solid var(--border-color); text-align: center; font-size: 0.9rem; }
-        tr:nth-child(even) { background-color: #f8fafc; }
-        input.table-input { width: 80px; text-align: center; padding: 8px; border-radius: 6px; }
-        .badge-subtotal { background: #e2e8f0; padding: 6px 12px; border-radius: 20px; font-weight: 700; color: var(--secondary); }
-
-        .toggle-box { display: flex; align-items: center; gap: 15px; margin-top: 5px; }
-        .radio-option { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500; font-size: 0.95rem; }
-
-        .conditional-box {
-            background: #f8fafc;
-            border-left: 4px solid var(--secondary);
-            padding: 18px;
-            margin-top: 15px;
-            border-radius: 6px;
-            display: none;
-        }
-
-        .dynamic-subpanel {
-            background: #f1f5f9;
-            border: 1.5px solid var(--secondary);
-            padding: 18px;
-            margin-top: 12px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            display: none;
-        }
-
-        .checkbox-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
-
-        .checkbox-card-wrapper {
-            background: #f8fafc;
-            border: 1.5px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px;
-            transition: all 0.2s;
-        }
-
-        .checkbox-card {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--secondary);
-        }
-
-        .checkbox-card input[type="checkbox"] { accent-color: var(--secondary); width: 18px; height: 18px; }
-
-        .btn-submit {
+        header {
             background: var(--secondary-gradient);
             color: white;
-            border: none;
-            padding: 18px 30px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            transition: background 0.3s;
+            padding: 30px 40px;
+            text-align: center;
         }
 
-        .btn-submit:hover { background: #0f223d; }
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
 
-        .sub-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .form-section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+        }
+
+        h2.section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            color: #1a365d; /* Azul oscuro solicitado */
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        h2.section-title i {
+            color: #1a365d; /* Azul oscuro solicitado para los iconos */
+            font-size: 1.3rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+        }
+
+        input[readonly] {
+            background-color: #f1f5f9;
+            color: #475569;
+            cursor: not-allowed;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--secondary);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        th:first-child {
+            text-align: left;
+        }
+
+        td input[type="number"] {
+            width: 80px;
+            padding: 6px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .subtotal-col, .total-row {
+            font-weight: 600;
+            background-color: #f8fafc;
+            text-align: center;
+        }
+
+        .conditional-box {
+            background-color: #f8fafc;
+            border: 1px dashed var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .conditional-box.active {
+            display: block;
+        }
+
+        .sub-module-container {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .sub-module-container.active {
+            display: block;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.95;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- CINTILLO Y LOGOS OFICIALES -->
-    <div class="header-banner">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ministerio_del_Poder_Popular_para_la_Cultura_de_Venezuela.png/800px-Ministerio_del_Poder_Popular_para_la_Cultura_de_Venezuela.png" alt="Ministerio de la Cultura">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_xNlWJ611mS8dI3jE6yC3G2o697P1z9L6yA&s" alt="Fundación Museos Nacionales">
-    </div>
-
-    <div class="title-box">
+    <header>
         <h1>REGISTRO DE VISITANTES DIARIOS 2027</h1>
         <p>Coordinación de Análisis y Procesamiento de Data e Indicadores - FMN</p>
-    </div>
+    </header>
 
     <form id="fmnForm">
-        <!-- MÓDULO 0 -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-landmark"></i></div>
-                <h2 class="module-title">Módulo 0: Información General</h2>
-            </div>
-            
+        
+        <!-- MÓDULO INICIAL: INFORMACIÓN GENERAL -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-clipboard-user"></i> Módulo Inicial - Información General</h2>
             <div class="grid-2">
                 <div class="form-group">
-                    <label for="fecha_registro"><i class="fa-regular fa-calendar-check"></i> Fecha de Registro *</label>
-                    <input type="date" id="fecha_registro" required>
+                    <label for="fechaRegistro">Fecha de Registro *</label>
+                    <input type="date" id="fechaRegistro" required>
                 </div>
                 <div class="form-group">
-                    <label for="museo_select"><i class="fa-solid fa-building-columns"></i> Museo / Institución Declarante *</label>
-                    <select id="museo_select" onchange="autoFillLocation()" required>
+                    <label for="institucionEspacio">Museo / Institución Declarante *</label>
+                    <select id="institucionEspacio" required>
                         <option value="">-- Seleccione un Museo --</option>
-                        <option value="MULLA" data-ubicacion="Avenida 23 de enero, al lado del Parque La Federación" data-ciudad="Barinas" data-estado="Barinas" data-region="Centro-Occidente">MULLA - Museo de los Llanos Barinas</option>
-                        <option value="MUVA" data-ubicacion="Avenida Bolívar Norte, cruce con calle Salom" data-ciudad="Valencia" data-estado="Carabobo" data-region="Centro">MUVA - El Museo de Arte Valencia</option>
-                        <option value="GAN" data-ubicacion="Caracas, Avenida México, entre Bellas Artes y Parque Carabobo" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">GAN - Galería de Arte Nacional</option>
-                        <option value="MBA" data-ubicacion="Caracas, Plaza Los Museos, Parroquia San Agustín" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MBA - Museo de Bellas Artes de Caracas</option>
-                        <option value="MAO" data-ubicacion="Caracas, La Rinconada" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MAO - Museo Alejandro Otero</option>
-                        <option value="MAM" data-ubicacion="Caracas, esquina de Urapal en Parroquia La Pastora" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MAM - Museo Arturo Michelena</option>
-                        <option value="MUSARQ" data-ubicacion="Caracas, Av. Bolívar, c/Av. Sur 9" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MUSARQ - Museo Nacional de Arquitectura Juan Pedro Posani</option>
-                        <option value="MUCI" data-ubicacion="Caracas, Plaza Los Museos, Parroquia San Agustín" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MUCI - Museo De Ciencias Naturales</option>
-                        <option value="MEDI" data-ubicacion="Caracas, Paseo Vargas de la avenida Bolívar" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MEDI - Museo de la Estampa y del Diseño Carlos Cruz-Diez</option>
-                        <option value="MUCOR" data-ubicacion="Balcón Bolívar, paseo Talavera con calle Hernández" data-ciudad="Coro" data-estado="Falcón" data-region="Occidente">MUCOR - Museo de Arte Coro</option>
-                        <option value="MUCA" data-ubicacion="Calle 5 entre carreras 9 y 10, frente a Plaza Páez" data-ciudad="Calabozo" data-estado="Guárico" data-region="Los Llanos">MUCA - Museo de la Ciudad de Calabozo</option>
-                        <option value="MUBARQ" data-ubicacion="Barquisimeto Estado Lara Carrera 15 con calles 25 y 26" data-ciudad="Barquisimeto" data-estado="Lara" data-region="Centro-Occidente">MUBARQ - Museo de Barquisimeto</option>
-                        <option value="MACCAR" data-ubicacion="Caracas, Parque Central Caracas" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MACCAR - Museo de Arte Contemporáneo Armando Reverón</option>
-                        <option value="MUJABO" data-ubicacion="Avenida Sucre, Parque Alí Primera, Catia" data-ciudad="Caracas" data-estado="Distrito Capital" data-region="Capital">MUJABO - Museo Jacobo Borges</option>
+                        <option value="MULLA">MULLA - Museo de los Llanos Barinas</option>
+                        <option value="MUVA">MUVA - El Museo de Arte Valencia</option>
+                        <option value="GAN">GAN - Galería de Arte Nacional</option>
+                        <option value="MBA">MBA - Museo de Bellas Artes de Caracas</option>
+                        <option value="MAO">MAO - Museo Alejandro Otero</option>
+                        <option value="MAM">MAM - Museo Arturo Michelena</option>
+                        <option value="MUSARQ">MUSARQ - Museo Nacional de Arquitectura Juan Pedro Posani</option>
+                        <option value="MUCI">MUCI - Museo De Ciencias Naturales</option>
+                        <option value="MEDI">MEDI - Museo de la Estampa y del Diseño Carlos Cruz-Diez</option>
+                        <option value="MUCOR">MUCOR - Museo de Arte Coro</option>
+                        <option value="MUCA">MUCA - Museo de la Ciudad de Calabozo</option>
+                        <option value="MUBARQ">MUBARQ - Museo de Barquisimeto</option>
+                        <option value="MACCAR">MACCAR - Museo de Arte Contemporáneo Armando Reverón</option>
+                        <option value="MUJABO">MUJABO - Museo Jacobo Borges</option>
                     </select>
                 </div>
             </div>
-
-            <div class="grid-3" style="margin-top: 15px;">
+            <div class="grid-3">
                 <div class="form-group">
-                    <label><i class="fa-solid fa-map-pin"></i> Ciudad / Estado</label>
-                    <input type="text" id="ciudad_estado" readonly placeholder="Auto-completado">
+                    <label for="ciudadEstado">Ciudad / Estado</label>
+                    <input type="text" id="ciudadEstado" readonly placeholder="Se completa automáticamente">
                 </div>
                 <div class="form-group">
-                    <label><i class="fa-solid fa-earth-americas"></i> Región</label>
-                    <input type="text" id="region" readonly placeholder="Auto-completado">
+                    <label for="region">Región</label>
+                    <input type="text" id="region" readonly placeholder="Se completa automáticamente">
                 </div>
                 <div class="form-group">
-                    <label for="nombre_registra"><i class="fa-solid fa-user-pen"></i> Nombre completo de quien registra la información del museo *</label>
-                    <input type="text" id="nombre_registra" placeholder="Ej: Ing. Kennhyt Olivo" required>
+                    <label for="ubicacionRecinto">Ubicación Exacta del Recinto</label>
+                    <input type="text" id="ubicacionRecinto" readonly placeholder="Se completa automáticamente">
                 </div>
             </div>
-
-            <div class="form-group" style="margin-top: 15px;">
-                <label><i class="fa-solid fa-location-dot"></i> Ubicación Exacta del Recinto</label>
-                <input type="text" id="ubicacion_recinto" readonly placeholder="Ubicación detallada...">
+            <div class="form-group">
+                <label for="nombreFuncionario">Nombre completo de quien registra la información del museo *</label>
+                <input type="text" id="nombreFuncionario" placeholder="Nombre y Apellido" required>
             </div>
-        </div>
+        </section>
 
-        <!-- DEMOGRÁFICO PUERTA PRINCIPAL -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-users"></i></div>
-                <h2 class="module-title">Visitantes Regulares de Puerta Principal (Desglose Demográfico)</h2>
-            </div>
-            <p class="sub-label" style="font-size: 0.88rem; margin-bottom: 15px;">Conteo diario discriminado por grupos etarios, género e interseccionalidad en acceso principal.</p>
-
-            <div class="table-responsive">
+        <!-- VISITANTES REGULARES DE PUERTA PRINCIPAL -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-users"></i> Visitantes Regulares de Puerta Principal (Desglose Demográfico)</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Conteo diario discriminado por grupos etarios, género e interseccionalidad en acceso principal.</p>
+            
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th style="text-align: left;"><i class="fa-solid fa-layer-group"></i> Grupo Etario / Prioritario</th>
-                            <th><i class="fa-solid fa-venus"></i> Mujeres</th>
-                            <th><i class="fa-solid fa-mars"></i> Hombres</th>
-                            <th><i class="fa-solid fa-genderless"></i> Diversidad (Nuevo)</th>
+                            <th>Grupo Etario / Prioritario</th>
+                            <th>Mujeres</th>
+                            <th>Hombres</th>
+                            <th>Diversidad (Nuevo)</th>
                             <th>Subtotal</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Niños/as (0 - 12 años)</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Niños/as (0 - 12 años)</td>
+                            <td><input type="number" class="demo-input m-nino" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-nino" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-nino" min="0" value="0"></td>
+                            <td class="subtotal-col sub-nino">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Adolescentes (13 - 17 años)</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Adolescentes (13 - 17 años)</td>
+                            <td><input type="number" class="demo-input m-adol" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-adol" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-adol" min="0" value="0"></td>
+                            <td class="subtotal-col sub-adol">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Adultos Jóvenes (18 - 29 años)</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Adultos Jóvenes (18 - 29 años)</td>
+                            <td><input type="number" class="demo-input m-jov" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-jov" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-jov" min="0" value="0"></td>
+                            <td class="subtotal-col sub-jov">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Adultos (30 - 49 años)</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Adultos (30 - 49 años)</td>
+                            <td><input type="number" class="demo-input m-adul" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-adul" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-adul" min="0" value="0"></td>
+                            <td class="subtotal-col sub-adul">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Adultos Mayores (50+ años)</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Adultos Mayores (50+ años)</td>
+                            <td><input type="number" class="demo-input m-may" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-may" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-may" min="0" value="0"></td>
+                            <td class="subtotal-col sub-may">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Personas con Discapacidad</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Personas con Discapacidad</td>
+                            <td><input type="number" class="demo-input m-disc" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-disc" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-disc" min="0" value="0"></td>
+                            <td class="subtotal-col sub-disc">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Pueblos Indígenas</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Pueblos Indígenas</td>
+                            <td><input type="number" class="demo-input m-ind" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-ind" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-ind" min="0" value="0"></td>
+                            <td class="subtotal-col sub-ind">0</td>
                         </tr>
                         <tr>
-                            <td style="text-align: left; font-weight: 600;">Comunas / Consejos Comunales</td>
-                            <td><input type="number" class="table-input m-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input h-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><input type="number" class="table-input d-val" min="0" value="0" oninput="calcTable()"></td>
-                            <td><span class="badge-subtotal subtotal">0</span></td>
+                            <td>Comunas / Consejos Comunales</td>
+                            <td><input type="number" class="demo-input m-com" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input h-com" min="0" value="0"></td>
+                            <td><input type="number" class="demo-input d-com" min="0" value="0"></td>
+                            <td class="subtotal-col sub-com">0</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>TOTAL GENERAL DEMOGRÁFICO</td>
+                            <td id="totalMujeres">0</td>
+                            <td id="totalHombres">0</td>
+                            <td id="totalDiversidad">0</td>
+                            <td id="totalGeneral">0</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                        <tr style="background: #e2e8f0; font-weight: bold; color: var(--secondary);">
-                            <td style="text-align: left;">TOTAL GENERAL DEMOGRÁFICO</td>
-                            <td id="total_m">0</td>
-                            <td id="total_h">0</td>
-                            <td id="total_d">0</td>
-                            <td id="total_demografico" style="font-size: 1.1rem; color: var(--secondary);">0</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
-        </div>
 
-        <!-- MÓDULO 1: BIBLIOTECA Y TIENDA -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-book-bookmark"></i></div>
-                <h2 class="module-title">Módulo 1: Servicios de Biblioteca y Tienda Activa</h2>
+            <!-- PREGUNTA CONDICIONAL DE EXPOSICIÓN -->
+            <div class="form-group" style="margin-top: 25px;">
+                <label for="declaraExposicion">¿Vas a declarar Exposición en sitio "Sede"?</label>
+                <select id="declaraExposicion">
+                    <option value="no">No N/A</option>
+                    <option value="si">Sí</option>
+                </select>
             </div>
+
+            <div id="panelExposicionSede" class="conditional-box">
+                <div class="form-group">
+                    <label for="nombreCompletoExposicion">NOMBRE COMPLETO DE LA EXPOSICIÓN:</label>
+                    <input type="text" id="nombreCompletoExposicion" placeholder="Ingrese el nombre completo de la exposición">
+                </div>
+
+                <div class="table-container" style="margin-top: 15px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Grupo Etario / Prioritario</th>
+                                <th>Mujeres</th>
+                                <th>Hombres</th>
+                                <th>Diversidad (Nuevo)</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Niños/as (0 - 12 años)</td>
+                                <td><input type="number" class="expo-input em-nino" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-nino" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-nino" min="0" value="0"></td>
+                                <td class="subtotal-col esub-nino">0</td>
+                            </tr>
+                            <tr>
+                                <td>Adolescentes (13 - 17 años)</td>
+                                <td><input type="number" class="expo-input em-adol" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-adol" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-adol" min="0" value="0"></td>
+                                <td class="subtotal-col esub-adol">0</td>
+                            </tr>
+                            <tr>
+                                <td>Adultos Jóvenes (18 - 29 años)</td>
+                                <td><input type="number" class="expo-input em-jov" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-jov" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-jov" min="0" value="0"></td>
+                                <td class="subtotal-col esub-jov">0</td>
+                            </tr>
+                            <tr>
+                                <td>Adultos (30 - 49 años)</td>
+                                <td><input type="number" class="expo-input em-adul" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-adul" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-adul" min="0" value="0"></td>
+                                <td class="subtotal-col esub-adul">0</td>
+                            </tr>
+                            <tr>
+                                <td>Adultos Mayores (50+ años)</td>
+                                <td><input type="number" class="expo-input em-may" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-may" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-may" min="0" value="0"></td>
+                                <td class="subtotal-col esub-may">0</td>
+                            </tr>
+                            <tr>
+                                <td>Personas con Discapacidad</td>
+                                <td><input type="number" class="expo-input em-disc" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-disc" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-disc" min="0" value="0"></td>
+                                <td class="subtotal-col esub-disc">0</td>
+                            </tr>
+                            <tr>
+                                <td>Pueblos Indígenas</td>
+                                <td><input type="number" class="expo-input em-ind" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-ind" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-ind" min="0" value="0"></td>
+                                <td class="subtotal-col esub-ind">0</td>
+                            </tr>
+                            <tr>
+                                <td>Comunas / Consejos Comunales</td>
+                                <td><input type="number" class="expo-input em-com" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input eh-com" min="0" value="0"></td>
+                                <td><input type="number" class="expo-input ed-com" min="0" value="0"></td>
+                                <td class="subtotal-col esub-com">0</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>TOTAL GENERAL DEMOGRÁFICO</td>
+                                <td id="expoTotalMujeres">0</td>
+                                <td id="expoTotalHombres">0</td>
+                                <td id="expoTotalDiversidad">0</td>
+                                <td id="expoTotalGeneral">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 1: SERVICIOS DE BIBLIOTECA Y TIENDA ACTIVA -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Módulo 1: Servicios de Biblioteca y Tienda Activa</h2>
             
             <div class="form-group">
                 <label>¿El Museo posee servicio de Biblioteca / Centro de Documentación activo?</label>
-                <div class="toggle-box">
-                    <label class="radio-option"><input type="radio" name="biblio_activa" value="si" onclick="toggleSection('sec_biblio', true)"> Sí</label>
-                    <label class="radio-option"><input type="radio" name="biblio_activa" value="no" onclick="toggleSection('sec_biblio', false)" checked> No</label>
-                </div>
+                <select id="tieneBiblioteca">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
             </div>
-
-            <div id="sec_biblio" class="conditional-box">
-                <h4 style="margin-top:0; color: var(--secondary);"><i class="fa-solid fa-book-open"></i> Registro de Biblioteca / Centro de Documentación</h4>
+            
+            <div id="panelBiblioteca" class="sub-module-container">
+                <h3 style="font-size: 1rem; color: #1a365d; margin-bottom: 12px;"><i class="fa-solid fa-book"></i> Registro de Biblioteca / Centro de Documentación</h3>
                 <div class="grid-3">
                     <div class="form-group">
                         <label>Visitantes Masculinos</label>
@@ -414,18 +513,16 @@
                 </div>
             </div>
 
-            <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);">
-
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 20px;">
                 <label>¿El Museo cuenta con Servicio de Tienda Activa / Economía Cultural?</label>
-                <div class="toggle-box">
-                    <label class="radio-option"><input type="radio" name="tienda_activa" value="si" onclick="toggleSection('sec_tienda', true)"> Sí</label>
-                    <label class="radio-option"><input type="radio" name="tienda_activa" value="no" onclick="toggleSection('sec_tienda', false)" checked> No</label>
-                </div>
+                <select id="tieneTienda">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
             </div>
 
-            <div id="sec_tienda" class="conditional-box">
-                <h4 style="margin-top:0; color: var(--secondary);"><i class="fa-solid fa-store"></i> Registro de Tienda Activa / Servicios Comandados</h4>
+            <div id="panelTienda" class="sub-module-container">
+                <h3 style="font-size: 1rem; color: #1a365d; margin-bottom: 12px;"><i class="fa-solid fa-store"></i> Registro de Tienda Activa / Servicios Comandados</h3>
                 <div class="grid-3">
                     <div class="form-group">
                         <label>Visitantes Masculinos</label>
@@ -441,370 +538,386 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- CAMPAMENTOS (CON PREGUNTA SÍ / NO) -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-shield-heart"></i></div>
-                <h2 class="module-title">Público en Campamentos / Agrupaciones Vulnerables Atendidas</h2>
-            </div>
-            
+        <!-- PÚBLICO EN CAMPAMENTOS / AGRUPACIONES VULNERABLES -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-hands-holding-child"></i> Público en Campamentos / Agrupaciones Vulnerables Atendidas</h2>
             <div class="form-group">
                 <label>¿Se ejecutó atención a Campamentos o Agrupaciones Vulnerables en la jornada?</label>
-                <div class="toggle-box">
-                    <label class="radio-option"><input type="radio" name="ejecuto_camp" value="si" onclick="toggleCampamento(true)"> Sí</label>
-                    <label class="radio-option"><input type="radio" name="ejecuto_camp" value="no" onclick="toggleCampamento(false)" checked> No (N/A)</label>
-                </div>
-            </div>
-
-            <div id="sec_campamento" class="conditional-box">
-                <div class="grid-2">
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-people-roof"></i> Nombre de Agrupación / Campamento Atendido</label>
-                        <input type="text" placeholder="Ej: Campamento Refugio Esperanza">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-earth-americas"></i> Estado</label>
-                        <input type="text" placeholder="Estado...">
-                    </div>
-                </div>
-                <div class="grid-2" style="margin-top: 10px;">
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-map-pin"></i> Municipio</label>
-                        <input type="text" placeholder="Municipio...">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-location-dot"></i> Dirección Exacta</label>
-                        <input type="text" placeholder="Dirección del campamento / agrupación...">
-                    </div>
-                </div>
-                <div class="grid-2" style="margin-top: 10px;">
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-user-check"></i> Total Personas Atendidas</label>
-                        <input type="number" min="0" value="0">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-users-rectangle"></i> Desglose Poblacional y Género</label>
-                        <input type="text" placeholder="Ej: 15 Mujeres, 10 Hombres (8 Niños, 17 Adultos)">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MÓDULO 2: GRUPOS ACO -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-handshake"></i></div>
-                <h2 class="module-title">Módulo 2: Grupos ACO (Atención a la Comunidad Organizada)</h2>
-            </div>
-            <p class="sub-label" style="font-size: 0.88rem; margin-bottom: 15px;">Marque los sectores atendidos en la jornada. Al seleccionarlos, complete nombre completo, ubicación y beneficiarios:</p>
-            
-            <div class="checkbox-grid">
-                <!-- 1 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('aco_1', this.checked)"> <i class="fa-solid fa-school"></i> Escuelas y Colegios (Educación Básica)
-                    </label>
-                    <div id="aco_1" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de Atención a la Comunidad Organizada</label>
-                            <input type="text" placeholder="Ej: U.E.N. Gran Mariscal de Ayacucho">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                            <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Alumnos / Docentes / Género)</label><input type="text" placeholder="Detalle..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('aco_2', this.checked)"> <i class="fa-solid fa-graduation-cap"></i> Universidades e Institutos Superiores
-                    </label>
-                    <div id="aco_2" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de Atención a la Comunidad Organizada</label>
-                            <input type="text" placeholder="Ej: Universidad Central de Venezuela">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                            <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Estudiantes / Profesores / Género)</label><input type="text" placeholder="Detalle..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('aco_3', this.checked)"> <i class="fa-solid fa-users-gear"></i> Adultos Mayores / Consejos Comunales
-                    </label>
-                    <div id="aco_3" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de Atención a la Comunidad Organizada</label>
-                            <input type="text" placeholder="Ej: Consejo Comunal Luchadores de Bolívar">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                            <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Voceros / Adultos Mayores / Género)</label><input type="text" placeholder="Detalle..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('aco_4', this.checked)"> <i class="fa-solid fa-wheelchair"></i> Personas con Discapacidad / Movilidad
-                    </label>
-                    <div id="aco_4" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de Atención a la Comunidad Organizada</label>
-                            <input type="text" placeholder="Ej: Fundación de Apoyo Funcional Inclusivo">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                            <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Discapacidad / Acompañantes)</label><input type="text" placeholder="Detalle..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('aco_5', this.checked)"> <i class="fa-solid fa-building-user"></i> Instituciones Públicas / Privadas
-                    </label>
-                    <div id="aco_5" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de Atención a la Comunidad Organizada</label>
-                            <input type="text" placeholder="Ej: Ministerio del Poder Popular...">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                            <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Personal / Género)</label><input type="text" placeholder="Detalle..."></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MÓDULO 3: DESPLIEGUE TERRITORIAL IDC ("MUSEO A LA CALLE") -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-route"></i></div>
-                <h2 class="module-title">Módulo 3: Despliegue Territorial IDC ("Museo a la Calle")</h2>
-            </div>
-            <p class="sub-label" style="font-size: 0.88rem; margin-bottom: 15px;">Seleccione la modalidad extramuros aplicada hoy. Al marcarla, complete el nombre completo de la actividad, lugar, municipio, estado y desglose:</p>
-            
-            <div class="checkbox-grid">
-                <!-- 1 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('idc_1', this.checked)"> <i class="fa-solid fa-comments"></i> Abordaje Técnico Comunitario
-                    </label>
-                    <div id="idc_1" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de la Actividad</label>
-                            <input type="text" placeholder="Ej: Jornada Patrimonial en Comuna Sur">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar / Plaza / Cancha..."></div>
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Comunidad / Género)</label><input type="text" placeholder="Detalle poblacional..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('idc_2', this.checked)"> <i class="fa-solid fa-chalkboard-user"></i> Taller Comunitario Itinerante
-                    </label>
-                    <div id="idc_2" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de la Actividad</label>
-                            <input type="text" placeholder="Ej: Taller de Conservación Preventiva Escolar">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar / Escuela..."></div>
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Participantes / Edades / Género)</label><input type="text" placeholder="Detalle poblacional..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('idc_3', this.checked)"> <i class="fa-solid fa-images"></i> Exposición Externa / Itinerante
-                    </label>
-                    <div id="idc_3" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de la Actividad</label>
-                            <input type="text" placeholder="Ej: Exposición Bicentenario en Espacio Público">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar / Bulevar..."></div>
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Visitantes / Género)</label><input type="text" placeholder="Detalle poblacional..."></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div class="checkbox-card-wrapper">
-                    <label class="checkbox-card">
-                        <input type="checkbox" onchange="toggleSubpanel('idc_4', this.checked)"> <i class="fa-solid fa-bullhorn"></i> Activación Cultural en Territorio
-                    </label>
-                    <div id="idc_4" class="dynamic-subpanel">
-                        <div class="form-group">
-                            <label>Nombre Completo de la Actividad</label>
-                            <input type="text" placeholder="Ej: Toma Cultural Comunitaria">
-                        </div>
-                        <div class="grid-3" style="margin-top: 10px;">
-                            <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar / Plaza Bolívar..."></div>
-                            <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio..."></div>
-                            <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado..."></div>
-                        </div>
-                        <div class="grid-2" style="margin-top: 10px;">
-                            <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
-                            <div class="form-group"><label>Desglose (Público general / Colectivos)</label><input type="text" placeholder="Detalle poblacional..."></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MÓDULO 4: CUMPLIMIENTO IDCF -->
-        <div class="module">
-            <div class="module-header">
-                <div class="module-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-                <h2 class="module-title">Módulo 4: Cumplimiento IDCF - Departamento de Educación</h2>
-            </div>
-            
-            <div class="form-group">
-                <label>Nivel de cumplimiento del protocolo educativo institucional planificado:</label>
-                <select id="cumplimiento_idcf">
-                    <option value="100">Cumplimiento Total (100% de la meta planificada)</option>
-                    <option value="50">Cumplimiento Parcial (50% - 99% de la meta)</option>
-                    <option value="0">Sin Actividad Planificada en la Jornada</option>
-                    <option value="suspendido">Reprogramado / Suspendido</option>
+                <select id="tieneCampamentos">
+                    <option value="no">No (N/A)</option>
+                    <option value="si">Sí</option>
                 </select>
             </div>
-        </div>
 
-        <!-- MÓDULO 5: CONFIRMACIÓN DE REGISTRO -->
-        <div class="module" style="background: #fffaf0; border-color: #fbd38d;">
-            <div class="module-header">
-                <div class="module-icon" style="background: var(--accent);"><i class="fa-solid fa-signature"></i></div>
-                <h2 class="module-title" style="color: #9c4221;">Módulo 5: Confirmación del Registro</h2>
+            <div id="panelCampamentos" class="sub-module-container">
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Nombre de Agrupación / Campamento Atendido</label>
+                        <input type="text" placeholder="Nombre de la agrupación">
+                    </div>
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <input type="text" placeholder="Estado">
+                    </div>
+                    <div class="form-group">
+                        <label>Municipio</label>
+                        <input type="text" placeholder="Municipio">
+                    </div>
+                    <div class="form-group">
+                        <label>Total Personas Atendidas</label>
+                        <input type="number" min="0" value="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Dirección Exacta</label>
+                    <input type="text" placeholder="Ubicación o dirección detallada">
+                </div>
+                <div class="form-group">
+                    <label>Desglose Poblacional y Género</label>
+                    <textarea rows="2" placeholder="Detalle de género y edades atendidas"></textarea>
+                </div>
             </div>
-            
-            <label class="checkbox-card" style="background: #fff; border-color: #fbd38d;">
-                <input type="checkbox" id="confirmacion_sw" required>
-                <span style="font-weight: 600; color: #7b341e;">Declaración de Veracidad: Confirmo que los datos reportados en este formulario corresponden fielmente a la jornada de hoy.</span>
-            </label>
-        </div>
+        </section>
 
-        <button type="submit" class="btn-submit">
-            <i class="fa-solid fa-paper-plane"></i> GUARDAR Y REGISTRAR JORNADA 2027
-        </button>
+        <!-- MÓDULO 2: GRUPOS ACO -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-people-group"></i> Módulo 2: Grupos ACO (Atención a la Comunidad Organizada)</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Marque los sectores atendidos en la jornada. Al seleccionarlos, complete nombre completo, ubicación y beneficiarios:</p>
+            
+            <div class="form-group"><label><input type="checkbox" id="chkAco1" class="chk-aco" data-target="panelAco1"> Escuelas y Colegios (Educación Básica)</label></div>
+            <div id="panelAco1" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Escuelas y Colegios</h4>
+                <div class="grid-3">
+                    <div class="form-group"><label>Nombre Completo de Atención</label><input type="text" placeholder="Nombre de la institución"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección exacta"></div>
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                </div>
+                <div class="form-group"><label>Desglose (Alumnos / Docentes / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" id="chkAco2" class="chk-aco" data-target="panelAco2"> Universidades e Institutos Superiores</label></div>
+            <div id="panelAco2" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Universidades e Institutos Superiores</h4>
+                <div class="grid-3">
+                    <div class="form-group"><label>Nombre Completo de Atención</label><input type="text" placeholder="Nombre de la institución"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección exacta"></div>
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                </div>
+                <div class="form-group"><label>Desglose (Estudiantes / Profesores / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" id="chkAco3" class="chk-aco" data-target="panelAco3"> Adultos Mayores / Consejos Comunales</label></div>
+            <div id="panelAco3" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Adultos Mayores / Consejos Comunales</h4>
+                <div class="grid-3">
+                    <div class="form-group"><label>Nombre Completo de Atención</label><input type="text" placeholder="Nombre de la organización"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección exacta"></div>
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                </div>
+                <div class="form-group"><label>Desglose (Voceros / Adultos Mayores / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" id="chkAco4" class="chk-aco" data-target="panelAco4"> Personas con Discapacidad / Movilidad</label></div>
+            <div id="panelAco4" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Personas con Discapacidad / Movilidad</h4>
+                <div class="grid-3">
+                    <div class="form-group"><label>Nombre Completo de Atención</label><input type="text" placeholder="Nombre del grupo"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección exacta"></div>
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                </div>
+                <div class="form-group"><label>Desglose (Discapacidad / Acompañantes)</label><input type="text" placeholder="Desglose detallado"></div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" id="chkAco5" class="chk-aco" data-target="panelAco5"> Instituciones Públicas / Privadas</label></div>
+            <div id="panelAco5" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Instituciones Públicas / Privadas</h4>
+                <div class="grid-3">
+                    <div class="form-group"><label>Nombre Completo de Atención</label><input type="text" placeholder="Nombre de la institución"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Dirección</label><input type="text" placeholder="Dirección exacta"></div>
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                </div>
+                <div class="form-group"><label>Desglose (Personal / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 3: DESPLIEGUE TERRITORIAL IDC -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-map-location-dot"></i> Módulo 3: Despliegue Territorial IDC ("Museo a la Calle")</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Seleccione la modalidad extramuros aplicada hoy. Al marcarla, complete el nombre completo de la actividad, lugar, municipio, estado y desglose:</p>
+            
+            <div class="form-group"><label><input type="checkbox" class="chk-idc" data-target="panelIdc1"> Abordaje Técnico Comunitario</label></div>
+            <div id="panelIdc1" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Abordaje Técnico Comunitario</h4>
+                <div class="grid-2">
+                    <div class="form-group"><label>Nombre Completo de la Actividad</label><input type="text" placeholder="Nombre de la actividad"></div>
+                    <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                    <div class="form-group"><label>Desglose (Comunidad / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" class="chk-idc" data-target="panelIdc2"> Taller Comunitario Itinerante</label></div>
+            <div id="panelIdc2" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Taller Comunitario Itinerante</h4>
+                <div class="grid-2">
+                    <div class="form-group"><label>Nombre Completo de la Actividad</label><input type="text" placeholder="Nombre de la actividad"></div>
+                    <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                    <div class="form-group"><label>Desglose (Participantes / Edades / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" class="chk-idc" data-target="panelIdc3"> Exposición Externa / Itinerante</label></div>
+            <div id="panelIdc3" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Exposición Externa / Itinerante</h4>
+                <div class="grid-2">
+                    <div class="form-group"><label>Nombre Completo de la Actividad</label><input type="text" placeholder="Nombre de la actividad"></div>
+                    <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                    <div class="form-group"><label>Desglose (Visitantes / Género)</label><input type="text" placeholder="Desglose detallado"></div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px;"><label><input type="checkbox" class="chk-idc" data-target="panelIdc4"> Activación Cultural en Territorio</label></div>
+            <div id="panelIdc4" class="sub-module-container">
+                <h4 style="color: #1a365d; margin-bottom: 10px;">Activación Cultural en Territorio</h4>
+                <div class="grid-2">
+                    <div class="form-group"><label>Nombre Completo de la Actividad</label><input type="text" placeholder="Nombre de la actividad"></div>
+                    <div class="form-group"><label>Lugar</label><input type="text" placeholder="Lugar"></div>
+                    <div class="form-group"><label>Municipio</label><input type="text" placeholder="Municipio"></div>
+                    <div class="form-group"><label>Estado</label><input type="text" placeholder="Estado"></div>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group"><label>Total Beneficiarios Atendidos</label><input type="number" min="0" value="0"></div>
+                    <div class="form-group"><label>Desglose (Público general / Colectivos)</label><input type="text" placeholder="Desglose detallado"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULO 4: CUMPLIMIENTO IDCF -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Módulo 4: Cumplimiento IDCF - Departamento de Educación</h2>
+            <div class="form-group">
+                <label>Nivel de cumplimiento del protocolo educativo institucional planificado:</label>
+                <select>
+                    <option value="total">Cumplimiento Total (100% de la meta planificada)</option>
+                    <option value="parcial">Cumplimiento Parcial (50% - 99% de la meta)</option>
+                    <option value="sin_actividad">Sin Actividad Planificada en la Jornada</option>
+                    <option value="reprogramado">Reprogramado / Suspendido</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- MÓDULO 5: CONFIRMACIÓN DEL REGISTRO -->
+        <section class="form-section">
+            <h2 class="section-title"><i class="fa-solid fa-check-double"></i> Módulo 5: Confirmación del Registro</h2>
+            <div class="form-group">
+                <label><input type="checkbox" required> Declaración de Veracidad: Confirmo que los datos reportados en este formulario corresponden fielmente a la jornada de hoy.</label>
+            </div>
+            <button type="submit" class="btn-submit">
+                <i class="fa-solid fa-floppy-disk"></i> Registrar y Guardar Datos
+            </button>
+        </section>
+
     </form>
 </div>
 
 <script>
-    function toggleSection(id, show) {
-        document.getElementById(id).style.display = show ? 'block' : 'none';
-    }
+    // Base de datos de los museos de la FMN para autorrelleno
+    const museosData = {
+        "MULLA": { ciudad: "Barinas, Barinas", region: "Los Llanos", ubicacion: "Avenida 23 de Enero, Complejo Cultural Don Hóracio Cárdenas" },
+        "MUVA": { ciudad: "Valencia, Carabobo", region: "Central", ubicacion: "Avenida Bolívar Norte con Calle 139" },
+        "GAN": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Avenida México, frente a la Plaza de los Museos, Parque Los Caobos" },
+        "MBA": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Plaza de los Museos, Parque Los Caobos" },
+        "MAO": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Zona Cultural de La Rinconada, Coche" },
+        "MAM": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Parroquia La Pastora, Esquina de Pajaritos a Municipal / Casa Natal" },
+        "MUSARQ": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Urbanización El Conde, Complejo Urbanístico Parque Central" },
+        "MUCI": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Plaza de los Museos, Parque Los Caobos" },
+        "MEDI": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Avenida Bolívar, entre urbanización Parque Central y Museo de los Niños" },
+        "MUCOR": { ciudad: "Coro, Falcón", region: "Occidental", ubicacion: "Zona Colonial de Coro, Calle Ampies con Zamora" },
+        "MUCA": { ciudad: "Calabozo, Guárico", region: "Los Llanos", ubicacion: "Centro Histórico de Calabozo" },
+        "MUBARQ": { ciudad: "Barquisimeto, Lara", region: "Centroccidental", ubicacion: "Carrera 16 con Esquina Calle 25" },
+        "MACCAR": { ciudad: "Catia La Mar, La Guaira", region: "Central", ubicacion: "Avenida La Costanera, Complejo Cultural" },
+        "MUJABO": { ciudad: "Caracas, Distrito Capital", region: "Capital", ubicacion: "Final Avenida Bolivar, Urbanización La Velita / Catia" }
+    };
 
-    function toggleSubpanel(id, show) {
-        document.getElementById(id).style.display = show ? 'block' : 'none';
-    }
+    // Autocompletado de Ciudad, Región y Ubicación al cambiar de museo
+    const selectMuseo = document.getElementById('institucionEspacio');
+    const inputCiudad = document.getElementById('ciudadEstado');
+    const inputRegion = document.getElementById('region');
+    const inputUbicacion = document.getElementById('ubicacionRecinto');
 
-    function toggleCampamento(show) {
-        document.getElementById('sec_campamento').style.display = show ? 'block' : 'none';
-    }
-
-    function autoFillLocation() {
-        const select = document.getElementById('museo_select');
-        const selectedOption = select.options[select.selectedIndex];
-
-        if (selectedOption.value !== "") {
-            document.getElementById('ubicacion_recinto').value = selectedOption.getAttribute('data-ubicacion');
-            document.getElementById('ciudad_estado').value = selectedOption.getAttribute('data-ciudad') + ' / ' + selectedOption.getAttribute('data-estado');
-            document.getElementById('region').value = selectedOption.getAttribute('data-region');
+    selectMuseo.addEventListener('change', function() {
+        const codigo = this.value;
+        if(museosData[codigo]) {
+            inputCiudad.value = museosData[codigo].ciudad;
+            inputRegion.value = museosData[codigo].region;
+            inputUbicacion.value = museosData[codigo].ubicacion;
         } else {
-            document.getElementById('ubicacion_recinto').value = '';
-            document.getElementById('ciudad_estado').value = '';
-            document.getElementById('region').value = '';
+            inputCiudad.value = '';
+            inputRegion.value = '';
+            inputUbicacion.value = '';
         }
-    }
+    });
 
-    function calcTable() {
-        const rows = document.querySelectorAll('tbody tr');
-        let grandM = 0, grandH = 0, grandD = 0, grandTotal = 0;
+    // Control de despliegue para Exposición en sitio Sede
+    const selectExp = document.getElementById('declaraExposicion');
+    const panelExp = document.getElementById('panelExposicionSede');
 
-        rows.forEach(row => {
-            const m = parseInt(row.querySelector('.m-val').value) || 0;
-            const h = parseInt(row.querySelector('.h-val').value) || 0;
-            const d = parseInt(row.querySelector('.d-val').value) || 0;
-            const subtotal = m + h + d;
+    selectExp.addEventListener('change', function() {
+        if(this.value === 'si') {
+            panelExp.classList.add('active');
+        } else {
+            panelExp.classList.remove('active');
+        }
+    });
 
-            row.querySelector('.subtotal').innerText = subtotal;
+    // Control Biblioteca
+    const selectBib = document.getElementById('tieneBiblioteca');
+    const panelBib = document.getElementById('panelBiblioteca');
+    selectBib.addEventListener('change', function() {
+        if(this.value === 'si') {
+            panelBib.classList.add('active');
+        } else {
+            panelBib.classList.remove('active');
+        }
+    });
 
+    // Control Tienda
+    const selectTienda = document.getElementById('tieneTienda');
+    const panelTienda = document.getElementById('panelTienda');
+    selectTienda.addEventListener('change', function() {
+        if(this.value === 'si') {
+            panelTienda.classList.add('active');
+        } else {
+            panelTienda.classList.remove('active');
+        }
+    });
+
+    // Control Campamentos
+    const selectCamp = document.getElementById('tieneCampamentos');
+    const panelCamp = document.getElementById('panelCampamentos');
+    selectCamp.addEventListener('change', function() {
+        if(this.value === 'si') {
+            panelCamp.classList.add('active');
+        } else {
+            panelCamp.classList.remove('active');
+        }
+    });
+
+    // Control Checkboxes ACO
+    document.querySelectorAll('.chk-aco').forEach(chk => {
+        chk.addEventListener('change', function() {
+            const target = document.getElementById(this.getAttribute('data-target'));
+            if(this.checked) {
+                target.classList.add('active');
+            } else {
+                target.classList.remove('active');
+            }
+        });
+    });
+
+    // Control Checkboxes IDC
+    document.querySelectorAll('.chk-idc').forEach(chk => {
+        chk.addEventListener('change', function() {
+            const target = document.getElementById(this.getAttribute('data-target'));
+            if(this.checked) {
+                target.classList.add('active');
+            } else {
+                target.classList.remove('active');
+            }
+        });
+    });
+
+    // Automatización de cálculos - Tabla Principal
+    const mainInputs = document.querySelectorAll('.demo-input');
+    mainInputs.forEach(input => {
+        input.addEventListener('input', calculateMainTable);
+    });
+
+    function calculateMainTable() {
+        const categories = ['nino', 'adol', 'jov', 'adul', 'may', 'disc', 'ind', 'com'];
+        let grandM = 0, grandH = 0, grandD = 0;
+
+        categories.forEach(cat => {
+            let m = parseInt(document.querySelector(`.m-${cat}`).value) || 0;
+            let h = parseInt(document.querySelector(`.h-${cat}`).value) || 0;
+            let d = parseInt(document.querySelector(`.d-${cat}`).value) || 0;
+            let sub = m + h + d;
+
+            document.querySelector(`.sub-${cat}`).textContent = sub;
             grandM += m;
             grandH += h;
             grandD += d;
-            grandTotal += subtotal;
         });
 
-        document.getElementById('total_m').innerText = grandM;
-        document.getElementById('total_h').innerText = grandH;
-        document.getElementById('total_d').innerText = grandD;
-        document.getElementById('total_demografico').innerText = grandTotal;
+        document.getElementById('totalMujeres').textContent = grandM;
+        document.getElementById('totalHombres').textContent = grandH;
+        document.getElementById('totalDiversidad').textContent = grandD;
+        document.getElementById('totalGeneral').textContent = grandM + grandH + grandD;
     }
 
-    document.getElementById('fmnForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('🎉 ¡Registro de la Jornada 2027 guardado exitosamente!');
+    // Automatización de cálculos - Tabla Exposición Sede
+    const expoInputs = document.querySelectorAll('.expo-input');
+    expoInputs.forEach(input => {
+        input.addEventListener('input', calculateExpoTable);
     });
+
+    function calculateExpoTable() {
+        const categories = ['nino', 'adol', 'jov', 'adul', 'may', 'disc', 'ind', 'com'];
+        let grandM = 0, grandH = 0, grandD = 0;
+
+        categories.forEach(cat => {
+            let m = parseInt(document.querySelector(`.em-${cat}`).value) || 0;
+            let h = parseInt(document.querySelector(`.eh-${cat}`).value) || 0;
+            let d = parseInt(document.querySelector(`.ed-${cat}`).value) || 0;
+            let sub = m + h + d;
+
+            document.querySelector(`.esub-${cat}`).textContent = sub;
+            grandM += m;
+            grandH += h;
+            grandD += d;
+        });
+
+        document.getElementById('expoTotalMujeres').textContent = grandM;
+        document.getElementById('expoTotalHombres').textContent = grandH;
+        document.getElementById('expoTotalDiversidad').textContent = grandD;
+        document.getElementById('expoTotalGeneral').textContent = grandM + grandH + grandD;
+    }
 </script>
 
 </body>
